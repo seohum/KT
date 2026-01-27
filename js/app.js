@@ -11,11 +11,57 @@ function money(v){
 
 function uniq(arr){ return [...new Set(arr.filter(v=>v!==null && v!==undefined && v!==""))]; }
 
+
+function normStr(v){
+  if(v===null || v===undefined) return null;
+  const s = String(v).replace(/\s+/g,"");
+  return s===""? null : s;
+}
+function normGroup(g){
+  const s = normStr(g);
+  if(!s) return null;
+  if(s==="I" || s==="I단품") return "I단품";
+  return s;
+}
+function canonGroupForUI(g){
+  const s = normGroup(g);
+  if(!s) return null;
+  if(s==="I단품") return "I 단품";
+  return s;
+}
+function eqOrAny(policyVal, selectedVal){
+  if(policyVal===null || policyVal===undefined || policyVal==="") return true;
+  return normStr(policyVal) === normStr(selectedVal);
+}
+function eqTv(policyTv, selectedTv){
+  if(policyTv===null || policyTv===undefined || policyTv==="") return true;
+  return normStr(policyTv) === normStr(selectedTv);
+}
+function normalizePolicy(){
+  POLICY.wired_table.forEach(r=>{
+    r.group = normGroup(r.group);
+    r.internet = normStr(r.internet);
+    r.tv = normStr(r.tv);
+  });
+  POLICY.uit_table.forEach(r=>{
+    r.group = normGroup(r.group);
+    r.internet = normStr(r.internet);
+    r.tv = normStr(r.tv);
+    r.mobile_tier = normStr(r.mobile_tier);
+  });
+}
+
 function buildGroups(){
-  const groups = uniq([
+  const raw = uniq([
     ...POLICY.wired_table.map(r=>r.group),
     ...POLICY.uit_table.map(r=>r.group)
   ]);
+  const groups = uniq(
+    raw
+      .filter(g=>g && !String(g).includes("정책") && String(g)!=="구분")
+      .map(g=>canonGroupForUI(g))
+  );
+
   const wrap = $("groupBtns");
   wrap.innerHTML="";
   groups.forEach((g,idx)=>{
@@ -42,7 +88,7 @@ function refreshSelectors(){
   const isUIT = POLICY.uit_table.some(r=>r.group===g);
   $("mobileTierRow").style.display = isUIT ? "" : "none";
 
-  const table = isUIT ? POLICY.uit_table.filter(r=>r.group===g) : POLICY.wired_table.filter(r=>r.group===g);
+  const table = isUIT ? POLICY.uit_table.filter(r=>r.group===normGroup(g)) : POLICY.wired_table.filter(r=>r.group===normGroup(g));
 
   const internetList = uniq(table.map(r=>r.internet));
   $("internetSel").innerHTML = internetList.map(v=>`<option value="${v}">${v}</option>`).join("");
@@ -77,10 +123,10 @@ function findRow(){
   const isUIT = POLICY.uit_table.some(r=>r.group===g);
   if(isUIT){
     const tier=$("mobileTierSel").value;
-    const rows = POLICY.uit_table.filter(r=>r.group===g && r.internet===internet && (r.tv||null)===(tv||null) && r.mobile_tier===tier);
+    const rows = POLICY.uit_table.filter(r=>r.group===normGroup(g) && eqOrAny(r.internet, internet) && eqTv(r.tv, tv) && eqOrAny(r.mobile_tier, tier));
     return rows[0] || null;
   }else{
-    const rows = POLICY.wired_table.filter(r=>r.group===g && r.internet===internet && (r.tv||null)===(tv||null));
+    const rows = POLICY.wired_table.filter(r=>r.group===normGroup(g) && eqOrAny(r.internet, internet) && eqTv(r.tv, tv));
     return rows[0] || null;
   }
 }
@@ -122,7 +168,9 @@ async function init(){
   const res = await fetch("data/wired_policy.json");
   POLICY = await res.json();
 
-  buildGroups();
+  
+  normalizePolicy();
+buildGroups();
   refreshSelectors();
 
   $("internetSel").addEventListener("change", calc);
