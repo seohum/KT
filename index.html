@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KT 유선 정책 자동화 (직원용)</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<header class="top">
+  <div class="inner">
+    <div class="brand">KT</div>
+    <div class="title">유선 정책 자동화 (직원용)</div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="panel">
+    <h2>조건 선택</h2>
+
+    <div class="row">
+      <label>구성</label>
+      <div id="groupBtns" class="btns"></div>
+    </div>
+
+    <div class="row">
+      <label>인터넷</label>
+      <select id="internetSel"></select>
+    </div>
+
+    <div class="row">
+      <label>TV</label>
+      <select id="tvSel"></select>
+    </div>
+
+    <div class="row" id="mobileTierRow" style="display:none;">
+      <label>모바일 구간</label>
+      <select id="mobileTierSel"></select>
+    </div>
+
+    <div class="row opt">
+      <label>옵션</label>
+      <div class="checks">
+        <label><input type="checkbox" id="optOnestop"> 원스톱(타사 사은품)</label>
+        <label><input type="checkbox" id="optGenie3"> 기가지니3 포함</label>
+      </div>
+    </div>
+
+    <div class="row action">
+      <button id="copyBtn" class="primary">결과 복사</button>
+      <button id="resetBtn" class="ghost">초기화</button>
+    </div>
+
+    <p class="hint">표기 규칙: 외부 노출 단어(공시/지원금) 없이 “정책금액/혜택금액” 기준으로만 표시합니다.</p>
+  </section>
+
+  <section class="panel result">
+    <h2>결과</h2>
+    <div class="cards">
+      <div class="card">
+        <div class="k">기본정책</div>
+        <div class="v" id="vBase">-</div>
+      </div>
+      <div class="card">
+        <div class="k">결합정책</div>
+        <div class="v" id="vBundle">-</div>
+      </div>
+      <div class="card">
+        <div class="k">U정책</div>
+        <div class="v" id="vU">-</div>
+      </div>
+    </div>
+
+    <div class="sum">
+      <div class="k">정책합계(사은품 미포함)</div>
+      <div class="v big" id="vTotal">-</div>
+    </div>
+
+    <div class="sum">
+      <div class="k">원스톱 포함 합계</div>
+      <div class="v" id="vTotalOnestop">-</div>
+    </div>
+
+    <div class="sum">
+      <div class="k">지니3 포함 합계</div>
+      <div class="v" id="vTotalGenie3">-</div>
+    </div>
+
+    <div class="note" id="noteLine"></div>
+  </section>
+</main>
+
+<script src="js/app.js"></script>
+</body>
+</html>
