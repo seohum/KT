@@ -890,11 +890,11 @@
       "u_policy": 100000,
       "base_policy": 30000,
       "bundle_policy": 100000,
-      "total_no_gift": 130000,
+      "total_no_gift": 230000,
       "onestop_gift": 80000,
-      "total_with_onestop": 210000,
+      "total_with_onestop": 310000,
       "genie3_add": 0,
-      "total_with_genie3": 210000
+      "total_with_genie3": 310000
     },
     {
       "group": "U+I",
@@ -904,11 +904,11 @@
       "u_policy": 100000,
       "base_policy": 80000,
       "bundle_policy": 130000,
-      "total_no_gift": 210000,
+      "total_no_gift": 310000,
       "onestop_gift": 80000,
-      "total_with_onestop": 290000,
+      "total_with_onestop": 390000,
       "genie3_add": 0,
-      "total_with_genie3": 290000
+      "total_with_genie3": 390000
     },
     {
       "group": "U+I",
@@ -918,11 +918,11 @@
       "u_policy": 100000,
       "base_policy": 120000,
       "bundle_policy": 180000,
-      "total_no_gift": 300000,
+      "total_no_gift": 400000,
       "onestop_gift": 80000,
-      "total_with_onestop": 380000,
+      "total_with_onestop": 480000,
       "genie3_add": 0,
-      "total_with_genie3": 380000
+      "total_with_genie3": 480000
     },
     {
       "group": "U+I",
@@ -932,11 +932,11 @@
       "u_policy": 200000,
       "base_policy": 30000,
       "bundle_policy": 100000,
-      "total_no_gift": 130000,
+      "total_no_gift": 330000,
       "onestop_gift": 80000,
-      "total_with_onestop": 210000,
+      "total_with_onestop": 410000,
       "genie3_add": 0,
-      "total_with_genie3": 210000
+      "total_with_genie3": 410000
     },
     {
       "group": "U+I",
@@ -946,11 +946,11 @@
       "u_policy": 200000,
       "base_policy": 80000,
       "bundle_policy": 130000,
-      "total_no_gift": 210000,
+      "total_no_gift": 410000,
       "onestop_gift": 80000,
-      "total_with_onestop": 290000,
+      "total_with_onestop": 490000,
       "genie3_add": 0,
-      "total_with_genie3": 290000
+      "total_with_genie3": 490000
     },
     {
       "group": "U+I",
@@ -960,11 +960,11 @@
       "u_policy": 200000,
       "base_policy": 120000,
       "bundle_policy": 180000,
-      "total_no_gift": 300000,
+      "total_no_gift": 500000,
       "onestop_gift": 80000,
-      "total_with_onestop": 380000,
+      "total_with_onestop": 580000,
       "genie3_add": 0,
-      "total_with_genie3": 380000
+      "total_with_genie3": 580000
     },
     {
       "group": "U+I",
@@ -974,11 +974,11 @@
       "u_policy": 250000,
       "base_policy": 30000,
       "bundle_policy": 100000,
-      "total_no_gift": 130000,
+      "total_no_gift": 380000,
       "onestop_gift": 80000,
-      "total_with_onestop": 210000,
+      "total_with_onestop": 460000,
       "genie3_add": 0,
-      "total_with_genie3": 210000
+      "total_with_genie3": 460000
     },
     {
       "group": "U+I",
@@ -988,11 +988,11 @@
       "u_policy": 250000,
       "base_policy": 80000,
       "bundle_policy": 130000,
-      "total_no_gift": 210000,
+      "total_no_gift": 460000,
       "onestop_gift": 80000,
-      "total_with_onestop": 290000,
+      "total_with_onestop": 540000,
       "genie3_add": 0,
-      "total_with_genie3": 290000
+      "total_with_genie3": 540000
     },
     {
       "group": "U+I",
@@ -1002,11 +1002,11 @@
       "u_policy": 250000,
       "base_policy": 120000,
       "bundle_policy": 180000,
-      "total_no_gift": 300000,
+      "total_no_gift": 550000,
       "onestop_gift": 80000,
-      "total_with_onestop": 380000,
+      "total_with_onestop": 630000,
       "genie3_add": 0,
-      "total_with_genie3": 380000
+      "total_with_genie3": 630000
     }
   ]
 }
