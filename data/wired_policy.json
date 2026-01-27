@@ -7,6 +7,13 @@
   },
   "wired_table": [
     {
+      "group": "M+I",
+      "internet": null,
+      "tv": null,
+      "bundle_policy": 0,
+      "priority": 0
+    },
+    {
       "group": "I 단품",
       "internet": "슬림",
       "tv": null,
