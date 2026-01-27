@@ -38,7 +38,7 @@ function currentGroup(){
 }
 
 function refreshSelectors(){
-  const g = currentGroup();
+  const g = group.replace(" ", "");
   const isUIT = POLICY.uit_table.some(r=>r.group===g);
   $("mobileTierRow").style.display = isUIT ? "" : "none";
 
