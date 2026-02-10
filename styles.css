@@ -1,0 +1,196 @@
+/* Simple, readable UI (no external deps) */
+:root{
+  --bg:#0b0f14;
+  --card:#121826;
+  --card2:#0f1522;
+  --text:#e6edf6;
+  --muted:#a6b3c6;
+  --border:#223049;
+  --accent:#ff1f3d; /* KT-ish red */
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Noto Sans KR", Arial, "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  background: radial-gradient(1000px 600px at 20% 10%, rgba(255,31,61,.16), transparent 60%),
+              radial-gradient(900px 500px at 90% 30%, rgba(70,140,255,.12), transparent 55%),
+              var(--bg);
+  color:var(--text);
+}
+
+.topbar{
+  position:sticky;
+  top:0;
+  z-index:10;
+  display:flex;
+  gap:12px;
+  align-items:center;
+  justify-content:space-between;
+  padding:14px 18px;
+  background: rgba(11,15,20,.72);
+  border-bottom:1px solid rgba(34,48,73,.7);
+  backdrop-filter: blur(10px);
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:8px 10px;
+  border-radius:12px;
+  border:1px solid rgba(34,48,73,.8);
+  background: rgba(18,24,38,.55);
+  color:var(--text);
+  cursor:pointer;
+}
+.logo:hover{border-color: rgba(255,31,61,.65)}
+.logo-mark{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:36px;height:36px;
+  border-radius:10px;
+  background: linear-gradient(135deg, rgba(255,31,61,.95), rgba(255,31,61,.35));
+  font-weight:800;
+  letter-spacing:.5px;
+}
+.logo-text{font-weight:700}
+.meta{color:var(--muted); font-size:12px}
+
+.container{
+  width:min(980px, 92vw);
+  margin:22px auto 60px;
+  display:grid;
+  gap:14px;
+}
+
+.card{
+  background: linear-gradient(180deg, rgba(18,24,38,.78), rgba(15,21,34,.78));
+  border:1px solid rgba(34,48,73,.75);
+  border-radius:18px;
+  padding:18px;
+  box-shadow: 0 18px 50px rgba(0,0,0,.35);
+}
+
+h2{
+  margin:0 0 14px;
+  font-size:18px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap:12px;
+}
+@media (max-width: 840px){
+  .grid{grid-template-columns: 1fr}
+}
+
+.field{display:flex; flex-direction:column; gap:8px}
+.label{color:var(--muted); font-size:12px}
+
+select{
+  width:100%;
+  padding:10px 12px;
+  border-radius:12px;
+  border:1px solid rgba(34,48,73,.9);
+  background: rgba(10,14,20,.6);
+  color:var(--text);
+  outline:none;
+}
+select:focus{border-color: rgba(255,31,61,.85)}
+
+.toggle{
+  position:relative;
+  padding:4px 0 0;
+}
+.toggle input{
+  width: 46px;
+  height: 24px;
+  accent-color: var(--accent);
+}
+.pill{
+  margin-top:6px;
+  display:inline-flex;
+  width:fit-content;
+  padding:6px 10px;
+  border:1px solid rgba(34,48,73,.9);
+  border-radius:999px;
+  color:var(--muted);
+  font-size:12px;
+  background: rgba(10,14,20,.5);
+}
+
+.actions{
+  margin-top:14px;
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+button{
+  border-radius:14px;
+  padding:10px 14px;
+  border:1px solid rgba(34,48,73,.85);
+  background: rgba(10,14,20,.55);
+  color:var(--text);
+  cursor:pointer;
+}
+button:hover{border-color: rgba(255,31,61,.65)}
+.primary{
+  background: linear-gradient(135deg, rgba(255,31,61,.95), rgba(255,31,61,.55));
+  border-color: rgba(255,31,61,.55);
+  font-weight:800;
+}
+.ghost{color:var(--muted)}
+.hint{margin:12px 0 0; color:var(--muted); font-size:12px}
+
+.result-grid{
+  display:grid;
+  gap:10px;
+}
+.result-line{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:12px 12px;
+  border:1px solid rgba(34,48,73,.75);
+  border-radius:14px;
+  background: rgba(10,14,20,.45);
+}
+.result-line.total{
+  border-color: rgba(255,31,61,.55);
+  background: rgba(255,31,61,.08);
+}
+.result-line span{color:var(--muted)}
+.divider{
+  height:1px;
+  background: rgba(34,48,73,.85);
+  margin:4px 2px;
+}
+.subnote{
+  margin-top:10px;
+  color:var(--muted);
+  font-size:12px;
+  line-height:1.5;
+}
+
+.explain{
+  color:var(--text);
+}
+.explain p{margin:0 0 8px; color:var(--muted)}
+.explain ul{margin:0; padding-left:18px; color:var(--text)}
+.explain li{margin:6px 0}
+
+.footer{
+  position:fixed;
+  bottom:0;
+  left:0; right:0;
+  padding:10px 18px;
+  border-top:1px solid rgba(34,48,73,.6);
+  background: rgba(11,15,20,.72);
+  color:rgba(166,179,198,.9);
+  font-size:12px;
+  backdrop-filter: blur(10px);
+}
