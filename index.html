@@ -1,94 +1,29 @@
-<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>유선 정책 조회</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
+
+<!doctype html><html lang="ko"><head>
+<meta charset="utf-8"><link rel="stylesheet" href="./css/style.css"></head>
 <body>
-  <header class="topbar">
-    <button class="logo" id="logoBtn" title="새로고침">
-      <span class="logo-mark">KT</span>
-      <span class="logo-text">유선 정책 조회</span>
-    </button>
-    <div class="meta" id="meta"></div>
-  </header>
+<div class="wrap">
+<div class="header"><img id="logo" src="./assets/kt-logo.png"></div>
 
-  <main class="container">
-    <section class="card">
-      <h2>조건 선택</h2>
+<div class="row">결합 유형 <select id="bundle"></select></div>
+<div class="row">인터넷 상품 <select id="internet"></select></div>
+<div class="row">TV 상품 <select id="tv"></select></div>
+<div class="row">원스톱 <select id="onestop"><option value="Y">O</option><option value="N">X</option></select></div>
+<div class="row">기가지니3 <select id="genie3"><option value="Y">O</option><option value="N">X</option></select></div>
+<div class="row">무선구간 <select id="wireless"></select></div>
 
-      <div class="grid">
-        <label class="field">
-          <span class="label">결합 유형</span>
-          <select id="category"></select>
-        </label>
+<div class="result-tabs">
+ <div class="res-tab active" data-tab="policy">정책 결과</div>
+ <div class="res-tab" data-tab="kos">KOS 사은품</div>
+</div>
 
-        <label class="field">
-          <span class="label">인터넷 상품</span>
-          <select id="internet"></select>
-        </label>
+<div id="panel-policy" class="res-panel active">
+ <div class="amount" id="total">-</div>
+</div>
+<div id="panel-kos" class="res-panel">
+ <div class="amount" id="kos">-</div>
+</div>
+</div>
 
-        <label class="field">
-          <span class="label">TV 상품</span>
-          <select id="tv"></select>
-        </label>
-
-        <label class="field toggle">
-          <span class="label">원스톱</span>
-          <input type="checkbox" id="oneStop" />
-          <span class="pill" id="oneStopPill">미선택</span>
-        </label>
-
-        <label class="field toggle">
-          <span class="label">기가지니3</span>
-          <input type="checkbox" id="giga3" />
-          <span class="pill" id="giga3Pill">미선택</span>
-        </label>
-      </div>
-
-      <div class="actions">
-        <button class="primary" id="lookupBtn">조회하기</button>
-        <button class="ghost" id="resetBtn">초기화</button>
-      </div>
-
-      <p class="hint">
-        * 정책 기준: <strong>유선.xlsx</strong> (유선정책 시트)
-      </p>
-    </section>
-
-    <section class="card" id="resultCard" aria-live="polite">
-      <h2>조회 결과</h2>
-
-      <div class="result-grid">
-        <div class="result-line"><span>기본정책금</span><strong id="basePolicy">-</strong></div>
-        <div class="result-line"><span>결합 정책금</span><strong id="bundlePolicy">-</strong></div>
-        <div class="result-line"><span>KOS 정책금</span><strong id="kosPolicy">-</strong></div>
-        <div class="divider"></div>
-        <div class="result-line total"><span>총 정책금</span><strong id="totalPolicy">-</strong></div>
-      </div>
-
-      <div class="subnote" id="subnote"></div>
-    </section>
-
-    <section class="card">
-      <h2>정책금 구성 안내</h2>
-      <div class="explain">
-        <p>※ 정책금 구성 안내</p>
-        <ul>
-          <li>기본정책금 : 선택한 인터넷/TV 상품 기준으로 적용되는 정책금</li>
-          <li>결합 정책금 : 결합 유형에 따라 적용되는 정책금</li>
-          <li>KOS 정책금 : 선택한 KOS 사은품에 따라 적용되는 정책금</li>
-        </ul>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <span>© KT 유선 정책 조회</span>
-  </footer>
-
-  <script src="app.js"></script>
-</body>
-</html>
+<script type="module" src="./js/ui.js"></script>
+</body></html>
