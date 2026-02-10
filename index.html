@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>대구프론티어센터 정책표</title>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <img src="./assets/kt-logo.png" alt="KT" />
+      <h1>대구프론티어센터 정책표</h1>
+    </div>
+
+    <div class="section">
+      <div class="section-title">정책 선택 </div>
+      <div class="pad">
+        <table class="table" aria-label="정책 선택 테이블">
+          <thead>
+            <tr>
+              <th style="width:18%">항목</th>
+              <th>선택</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>결합 유형</td>
+              <td><select id="bundle"></select></td>
+            </tr>
+            <tr>
+              <td>인터넷 상품</td>
+              <td><select id="internet"></select></td>
+            </tr>
+            <tr id="rowTv">
+              <td>TV 상품</td>
+              <td><select id="tv"></select></td>
+            </tr>
+            <tr>
+              <td>원스톱</td>
+              <td>
+                <select id="onestop">
+                  <option value="Y">O (적용)</option>
+                  <option value="N">X (미적용)</option>
+                </select>
+                
+              </td>
+            </tr>
+            <tr id="rowGenie3">
+              <td>기가지니3</td>
+              <td>
+                <select id="genie3">
+                  <option value="Y">O (적용)</option>
+                  <option value="N">X (미적용)</option>
+                </select>
+              </td>
+            </tr>
+            <tr id="rowWireless">
+              <td>무선구간</td>
+              <td><select id="wireless"></select></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="section-title">결과</div>
+      <div class="result-box">
+        <div class="result-label">총 정책금</div>
+        <div class="result-amount" id="totalPolicy">—</div>
+        
+      </div>
+
+      <div class="desc-box">
+        <div class="desc-head">
+          
+          <button class="button" id="copyBtn" type="button">설명 복사</button>
+        </div>
+        <pre id="policyDesc"></pre>
+      </div>
+    </div>
+
+    
+  </div>
+
+  <script type="module" src="./js/ui-handler.js"></script>
+</body>
+</html>
